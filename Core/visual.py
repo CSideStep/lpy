@@ -52,5 +52,5 @@ def display_transformation(p1:float, p2:float, mode:int=ASVECTORFIELD, resolutio
             vs.append(sin_p(theta, p2)-cy)
         plot_vector_field(xs, ys, us, vs)
     elif mode==ASFUNCTION: #plot the Ratio function
-        plot_function(lambda x:float: ratio(x, p1, p2), 0, 2*pi, steps=resolution**2)
+        plot_function(lambda x: ratio(x, p1, p2), 0, 2*pi, steps=resolution**2)
         
