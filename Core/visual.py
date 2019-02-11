@@ -16,11 +16,17 @@ def plot_function(f, min_x:float, max_x:float, steps:int=100):
     plt.plot(xs, ys) #generagte the plot based of the lists
     plt.show() #show the plot
 
-def plot_vector_field(xs:List[float], ys:List[float], us:List[float], vs:List[float]):
+def plot_vector_field(xs:List[float], ys:List[float], us:List[float], vs:List[float], real_scale=False):
     """
     This functions plots a vector field using matplotlib. Just a helper-function to reduce redundant code. 
     """    
-    plt.quiver(xs, ys, us, vs) #generate the plot
+    #generate the plot
+    if real_scale: # display real vector lengths in a square
+        plt.axis("equal")
+        plt.quiver(xs, ys, us, vs, scale=1, units="xy")
+    else:
+        plt.quiver(xs, ys, us, vs) #"standart" usage of quiver, which uses an autoscaler
+    #plt.plot([xs[i] + us[i]for i in range(len(xs))], [ys[i] + vs[i]for i in range(len(xs))]) #to controll what you see
     plt.show() # display the plot
 
 def display_transformation(p1:float, p2:float, mode:int=ASVECTORFIELD, resolution:int=10):
@@ -50,7 +56,7 @@ def display_transformation(p1:float, p2:float, mode:int=ASVECTORFIELD, resolutio
             ys.append(cy)
             us.append(cos_p(theta, p2)-cx) 
             vs.append(sin_p(theta, p2)-cy)
-        plot_vector_field(xs, ys, us, vs)
+        plot_vector_field(xs, ys, us, vs, real_scale=True)
     elif mode==ASFUNCTION: #plot the Ratio function
         plot_function(lambda x: ratio(x, p1, p2), 0, 2*pi, steps=resolution**2)
         
