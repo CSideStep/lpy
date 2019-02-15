@@ -1,6 +1,7 @@
-from Core.trig import *
+from Core.trig import sin_p, cos_p, ratio, get_angle
 import matplotlib.pyplot as plt
 from typing import List
+from Core.analytic import approx_pi
 
 ASVECTORFIELD=0
 ASFUNCTION=1
@@ -59,4 +60,9 @@ def display_transformation(p1:float, p2:float, mode:int=ASVECTORFIELD, resolutio
         plot_vector_field(xs, ys, us, vs, real_scale=True)
     elif mode==ASFUNCTION: #plot the Ratio function
         plot_function(lambda x: ratio(x, p1, p2), 0, 2*pi, steps=resolution**2)
-        
+
+def display_pi_of_p(min_p:float, max_p:float, steps=1000):
+    """
+    Display the value of pi in l^p as a function of p.
+    """
+    plot_function(lambda p: approx_pi(p, steps=steps), min_p, max_p, steps=steps)        

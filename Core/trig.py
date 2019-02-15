@@ -8,8 +8,8 @@ def sin_p(theta:float, p:float):
     if p < 1: raise Exception("p must be >= 1")#Raise an Exception if p is too low
     while theta > 2*pi: theta -= 2 * pi #get theta between 0 and 2*pi
     while theta < 0:  theta += 2 * pi #get theta between 0 and 2*pi
-    if theta <= pi: return abs(tan(theta))/pow(1 + abs(pow(tan(theta), p)), 1/p)
-    else: return -abs(tan(theta))/pow(1 + abs(pow(tan(theta), p)), 1/p)
+    if theta <= pi: return abs(tan(theta))/pow(1 + pow(abs(tan(theta)), p), 1/p)
+    else: return -abs(tan(theta))/pow(1 + pow( abs(tan(theta)), p), 1/p)
 
 def cos_p(theta:float, p:float):
     """
@@ -19,8 +19,8 @@ def cos_p(theta:float, p:float):
     if p < 1: raise Exception("p must be >= 1")#Raise an Exception if p is too low
     while theta > 2*pi: theta -= 2 * pi #get theta between 0 and 2*pi
     while theta < 0:  theta += 2 * pi #get theta between 0 and 2*pi
-    if theta <= 0.5 * pi or theta >= 1.5 * pi: return 1/pow(1 + abs(pow(tan(theta), p)), 1/p)
-    else: return -1/pow(1 + abs(pow(tan(theta), p)), 1/p)
+    if theta <= 0.5 * pi or theta >= 1.5 * pi: return 1/pow(1 + pow(abs(tan(theta)), p), 1/p)
+    else: return -1/pow(1 + pow(abs(tan(theta)), p), 1/p)
 
 def ratio(theta:float, p1:float, p2:float):# Get the Ratio between the triangles inside the resepctive unit circles for some angle theta
     if p1 < 1 or p2 < 1: raise Exception("p1 and p2 must be >= 1") #Raise an Exception if p is too low
