@@ -1,7 +1,8 @@
 from Core.trig import sin_p, cos_p, ratio, get_angle
 import matplotlib.pyplot as plt
 from typing import List
-from Core.analytic import approx_pi
+from Core.numeric import approx_pi
+from math import pi
 
 ASVECTORFIELD=0
 ASFUNCTION=1
@@ -65,4 +66,4 @@ def display_pi_of_p(min_p:float, max_p:float, steps=1000):
     """
     Display the value of pi in l^p as a function of p.
     """
-    plot_function(lambda p: approx_pi(p, steps=steps), min_p, max_p, steps=steps)        
+    plot_function(lambda p: approx_pi(p, steps=steps), min_p, max_p, steps=steps)#plot approx_pi from p=min_p to p=max_p     

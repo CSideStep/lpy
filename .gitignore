@@ -2,3 +2,4 @@
 *.pdf
 .vscode/
 Core/__pycache__/
+*.lnk
