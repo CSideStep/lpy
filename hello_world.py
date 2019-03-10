@@ -4,4 +4,12 @@ from math import pi, sin, factorial
 from Core.numeric import approx_integrate, approx_diff, approx_pi
 
 if __name__ == "__main__":
-    
+    min_p=1
+    max_p=20
+    steps=50000
+    increment=(max_p-min_p)/steps
+    with open("pi.csv", "w+") as f:
+        for i in range(steps):
+            p=min_p + i * increment
+            f.write(str(p) +","+str(approx_pi(p))+ "\n")
+        
