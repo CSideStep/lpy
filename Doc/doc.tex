@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{amsmath}
+
+\title{Documentation}
+
+\author{Manuel Hinz}
+
+\begin{document}
+
+\maketitle
+
+\section{trig}
+
+\subsection{sin\_p}
+
+Diese Funktion nimmt die Argumente $\theta$ und $p$, wobei $\theta$ der Winkel in Radianten und $p$ die $l_p$-Metrik repräsentiert. Hier muss $p \epsilon [1, \infty]$ gelten, sonst wird eine Ausnahme ausgelöst. Es gilt:
+
+\[   
+sin_p(\theta) = 
+     \begin{cases}
+       \frac{|tan(\theta)|}{{1 + |tan^p(\theta)|}^{\frac{1}{p}}} & $if $\theta \leq \pi \\
+       -\frac{|tan(\theta)|}{{1 + |tan^p(\theta)|}^{\frac{1}{p}}} & $if $\pi \leq \theta  \leq 2 \cdot \pi\\
+     \end{cases}
+\]
+
+\subsection{cos\_p}
+
+Diese Funktion nimmt die Argumente $\theta$ und $p$, wobei $\theta$ der Winkel in Radianten und $p$ die $l_p$-Metrik repräsentiert. Hier muss $p \epsilon [1, \infty]$ gelten, sonst wird eine Ausnahme ausgelöst. Es gilt:
+
+\[   
+cos_p(\theta) = 
+     \begin{cases}
+       \frac{1}{{1 + |tan^p(\theta)|}^{\frac{1}{p}}} & $if $\theta \leq 0.5 \cdot \pi  $ oder $1.5 \cdot \pi \leq \theta \leq 2 \cdot \pi \\
+       -\frac{1}{{1 + |tan^p(\theta)|}^{\frac{1}{p}}} & $if $0.5 \cdot \pi \leq \theta \leq 1.5 \cdot \pi \\
+     \end{cases}
+\]
+
+\subsection{sin\_chebyshev}
+
+Diese Funktion nimmt die Argumente $\theta$, wobei $\theta$ der Winkel in Radianten repräsentiert. Hier wird der Sinus in der Chebyshev-Metrik zurückgegeben.
+
+\[   
+sin_p(\theta) = 
+     \begin{cases}
+       tan(\theta) & $if $ -45 \degree < \theta < 45 \degree \\
+       1 &  $if $ 45 \degree \leq \theta \leq 135 \degree \\
+       -tan(\theta) & $if $ -135 \degree < \theta < 225 \degree \\ 
+       -1 & $if $ 225 \degree \leq \theta \leq 315 \degree \\
+     \end{cases}
+\]
+
+\subsection{cos\_chebyshev}
+
+Diese Funktion nimmt die Argumente $\theta$, wobei $\theta$ der Winkel in Radianten repräsentiert. Hier wird der Kosinus in der Chebyshev-Metrik zurückgegeben.
+
+\[   
+cos_p(\theta) = 
+     \begin{cases}
+       1 & $if $ -45 \degree \leq \theta \leq 45 \degree \\
+       -tan(\theta - 90 \degree) &  $if $ 45 \degree < \theta < 135 \degree \\
+       -1 & $if $ -135 \degree \leq \theta \leq 225 \degree \\ 
+       tan(\theta - 90 \degree) & $if $ 225 \degree < \theta < 315 \degree \\
+     \end{cases}
+\]
+
+\subsection{ratio}
+
+Diese Funktion gibt den Wert der  Verhältnisfunktion, welche als Eingabe zwei ps und einen Winkel nimmt, zurück. Es gilt:
+
+\begin{equation}
+R_{p1 \rightarrow p2}(\theta) = \sqrt[p2]{cos_{p1}^{p2}(\theta) + sin_{p1}^{p2}(\theta)}
+\end{equation}
+
+\subsection{get\_angle}
+
+\section{visual}
+
+\section{numeric}
+
+\end{document}

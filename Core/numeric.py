@@ -1,5 +1,5 @@
 from functools import reduce
-from math import pi
+from math import pi, factorial
 import Core.visual as v
 from Core.trig import sin_p, cos_p
 
@@ -11,11 +11,11 @@ def approx_integrate(f, x_min:float, x_max:float, steps:int=1000, right_focus:bo
     scaled_ys=[f(x)*((x_max-x_min)/(steps)) for x in xs] #f(x) * width, for every x
     return sum(scaled_ys) #return the sum
 
-def approx_diff(f, x:float, offset:float=0.001):
+def approx_diff(f, x:float, offset:float=0.01):
     """
     Approx. the slope of the tangent of f at x
     """
-    return (f(x+offset) - f(x))/offset #df/dx
+    return (f(x+offset/2) - f(x-offset/2))/offset #df/dx
 
 def approx_pi(p:float, steps=1000, chebyshev=False):
     """
