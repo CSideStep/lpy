@@ -5,8 +5,8 @@ from Core.numeric import approx_integrate, approx_diff, approx_pi
 
 if __name__ == "__main__":
     min_p=1
-    max_p=20
-    steps=50000
+    max_p=80
+    steps=50
     increment=(max_p-min_p)/steps
     with open("pi.csv", "w+") as f:
         for i in range(steps):

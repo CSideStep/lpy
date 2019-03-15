@@ -18,6 +18,13 @@ def plot_function(f, min_x:float, max_x:float, steps:int=100):
     plt.plot(xs, ys) #generagte the plot based of the lists
     plt.show() #show the plot
 
+def plot_functions(fs, min_x:float, max_x:float, steps:int=100):
+    xs = [min_x + (max_x-min_x)*i/(steps-1) for i in range(steps)] #generate the x-values and store them in a list
+    yss = [[f(x) for x in xs] for f in fs] #generate the y-values and store them in a list
+    for ys in yss:
+        plt.plot(xs, ys) #generagte the plot based of the lists
+    plt.show() #show the plot
+
 def plot_vector_field(xs:List[float], ys:List[float], us:List[float], vs:List[float], real_scale=False):
     """
     This functions plots a vector field using matplotlib. Just a helper-function to reduce redundant code. 
