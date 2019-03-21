@@ -1,3 +1,0 @@
--Fix trig functions (they don`t work as they go to 1)
--Jupyter Notebook
--Import code 
