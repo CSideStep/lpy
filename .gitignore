@@ -1,4 +1,5 @@
 Doc/
+.ipynb_checkpoints/
 *.pdf
 .vscode/
 Core/__pycache__/
