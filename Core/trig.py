@@ -48,7 +48,7 @@ def cos_chebyshev(theta:float):
 
 def ratio(theta:float, p1:float, p2:float):# Get the Ratio between the triangles inside the resepctive unit circles for some angle theta
     if p1 < 1 or p2 < 1: raise Exception("p1 and p2 must be >= 1") #Raise an Exception if p is too low
-    return pow(abs(pow(sin_p(theta, p2), p1)) + abs(pow(cos_p(theta, p2), p1)), 1/p1)
+    return pow(pow(abs(sin_p(theta, p2)), p1) + pow(abs(cos_p(theta, p2)), p1), 1/p1)
 
 def get_angle(x, y): #get the angle of the vector from the origin the point (x,y)
     if x == 0: return (y==1)*0.5*pi + (y==-1)*1.5*pi

@@ -4,5 +4,5 @@ from math import pi, sin, factorial, tan
 from Core.numeric import approx_integrate, approx_diff, approx_pi, save_pi_csv
 
 if __name__ == "__main__":
-    print(approx_integrate(lambda x: x**2, 0, 2))
+    print(ratio(1.25*pi, 1, 2))
         
