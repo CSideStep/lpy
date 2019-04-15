@@ -1,1 +1,2 @@
 # lpy
+lpy is a python library, programmed by Manuel Hinz, which implements many functions described in Robert Poodiacks paper "Generalizing pi, Angle Measure and Trigonometry" (https://www.researchgate.net/publication/240641378_Generalizing_p_Angle_Measure_and_Trigonometry), as well as some functions, which I found useful while playing around with this topic. lpy aims to provide the tools necessary to educate and research lp-metrics.
